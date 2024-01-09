@@ -44,6 +44,14 @@ export class AuthService {
             console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
     }
+
+    async logout(){
+        try {
+            await this.account.deleteSessions()
+        } catch (error) {
+            throw error
+        }
+    }
 }
 
 const authService = new AuthService();
