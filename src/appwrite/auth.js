@@ -1,4 +1,3 @@
-/* eslint-disable no-empty */
 /* eslint-disable no-useless-catch */
 import conf from '../conf/config'
 import {Client, Account, ID} from 'appwrite'
@@ -30,6 +29,7 @@ export class AuthService {
 
     async login({email, password}) {
         
+        // eslint-disable-next-line no-useless-catch
         try { 
          return   await this.account.createEmailSession(email,password)
          } catch (error) {
