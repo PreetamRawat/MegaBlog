@@ -100,17 +100,17 @@ export class Service{
         }
     }
 
-    // async deleteFile(fileId){
-    //     try {
-    //         return await this.bucket.deleteFile(
-    //             conf.appwriteBucketId,
-    //             fileId
-    //         )
-    //     } catch (error) {
-    //         console.log("Appwrite serive :: getPost :: error", error);
-    //         return false
-    //     }
-    // }
+    async deleteFile(fileId){
+        try {
+            return await this.bucket.deleteFile(
+                conf.appwriteBucketId,
+                fileId
+            )
+        } catch (error) {
+            console.log("Appwrite serive :: getPost :: error", error);
+            return false
+        }
+    }
 }
 
 const service = new Service()
