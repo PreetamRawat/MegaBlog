@@ -1,5 +1,4 @@
-/* eslint-disable no-useless-catch */
-import conf from '../conf/config'
+import conf from '../conf/conf.js'
 import {Client, Account, ID} from 'appwrite'
 
 export class AuthService {
@@ -46,6 +45,8 @@ export class AuthService {
     }
 
     async logout(){
+     
+        // eslint-disable-next-line no-useless-catch
         try {
             await this.account.deleteSessions()
         } catch (error) {

@@ -1,8 +1,8 @@
 /* eslint-disable no-useless-catch */
 /* eslint-disable no-empty */
-import { flushSync } from 'react-dom';
+// import { flushSync } from 'react-dom';
 import conf from '../conf/config'
-import {Client, Account, ID, Databases, Storage ,Query} from 'appwrite'
+import {Client, ID, Databases, Storage ,Query} from 'appwrite'
 
 export class Service{
     client = new Client();
@@ -110,6 +110,13 @@ export class Service{
             console.log("Appwrite serive :: getPost :: error", error);
             return false
         }
+    }
+
+    getFilePreview(fileId){
+        return this.bucket.getFilePreview(
+            conf.appwriteBucketId,
+            fileId
+        )
     }
 }
 
