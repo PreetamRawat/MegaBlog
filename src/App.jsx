@@ -21,11 +21,10 @@ function App() {
     .finally(()=> setLoading(false))
   },[])
 
-  return (
-   <>
-     <h1>A blog app with appwrite</h1>
-   </>
-  )
+  return !loading ? (
+    <div className=''></div>
+  ) : null
+
 }
 
 export default App
